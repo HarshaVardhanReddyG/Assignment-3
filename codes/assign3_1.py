@@ -1,10 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
+
+read = pd.read_excel("raw_table.xlsx","Sheet1")
+
 # creating the dataset
-data = {'A':75, 'B':55, 'C':37,
-        'D':29, 'E':10, 'F':37 }
-Political_party = list(data.keys())
-Seats_won = list(data.values())
+data = np.array(read)
+Political_party = data[0]
+Seats_won = data[1]
   
 fig = plt.figure(figsize = (10, 5))
  
